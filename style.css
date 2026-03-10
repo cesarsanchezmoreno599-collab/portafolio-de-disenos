@@ -1,0 +1,24 @@
+body {
+    background-color:rgb(231, 180, 68);/* esto es para ponerle un color*/
+    font-family: Tahoma, sans-serif;/*escoger el estilo de la letra*/
+    color:wheat;/*para escoger el color de la letra*/
+}
+
+h1 {
+    color: rgb(139, 95, 0);
+    text-align: center;/*para alinear el texto*/
+}
+
+button {
+background-color: rgb(231,180,68);/*color que utilice primero*/
+color: white;
+padding: 10px 20px;
+border-radius:5px;/*bordes redondeados*/
+cursor: pointer;
+transition: 0.3s;/*hace que el cambio de color sea mas suave*/
+}
+
+button:hover {
+background-color: blanchedalmond;/*cambia el color al pasar el mouse*/
+color:black;
+}
