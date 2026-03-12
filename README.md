@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="imagen/banner_disenoswebc.png.png" alt="Banner de Diseños Web C con Giratina y Ultra Necrozma" width="100%">
+  <img src="imagen/banner_disenoswebc.png" alt="Banner de Diseños Web C con Giratina y Ultra Necrozma" width="100%">
 </p>
+
 # 🌐 Diseños Web C - Portafolio Profesional
 
 ¡Bienvenido al Mundo Distorsión del desarrollo web! Este es mi portafolio oficial, donde la elegancia y la funcionalidad se encuentran.
