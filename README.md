@@ -3,7 +3,7 @@
 # 🌐 Diseños Web C
 ### "Innovación y precisión nivel Leyenda para tu negocio"
 
-| ![Banner](imagen/banner_disenoswebc.png) |
+| ![Banner](img/banner_disenoswebc.png) |
 | :---: |
 | **✨ Forma Origen del Desarrollo Web ✨** <br> *Donde la elegancia de Giratina y la luz de Ultra Necrozma se encuentran.* |
 
