@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="imagen/banner_disenoswebc.png" alt="Banner de Diseños Web C con Giratina y Ultra Necrozma" width="100%">
+  <img src="img/banner_disenoswebc.png" alt="Banner de Diseños Web C con Giratina y Ultra Necrozma" width="100%">
 </p>
 
 # 🌐 Diseños Web C - Portafolio Profesional
