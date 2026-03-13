@@ -111,18 +111,16 @@ Correo: disenoydesarrollowebc@gmail.com
 
 <h3>Envíame tu idea</h3>
 
-<form class="formulario-boceto">
+<form class="formulario-boceto" action="https://formspree.io/f/mjgarzje" method="POST">
 
 <label class="subir-archivo">
-Seleccionar boceto o archivo
-<input type="file" accept=".png,.jpg,.jpeg,.pdf" required>
+🖼️ Subir imagen de tu boceto o diseño
+<input type="file" name="archivo" accept="image/png,image/jpeg" required>
 </label>
 
-<input type="text" placeholder="Tu nombre" required>
-
-<input type="email" placeholder="Tu correo electrónico" required>
-
-<textarea placeholder="Describe tu idea o proyecto..." required></textarea>
+<input type="text" name="nombre" placeholder="Tu nombre" required>
+<input type="email" name="correo" placeholder="Tu correo electrónico" required>
+<textarea name="idea" placeholder="Describe tu idea o proyecto..." required></textarea>
 
 <button class="btn-subir">Enviar idea</button>
 

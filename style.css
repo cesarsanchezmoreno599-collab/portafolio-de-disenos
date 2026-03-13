@@ -297,16 +297,31 @@ height:90px;
 /* BOTON SUBIR ARCHIVO */
 
 .subir-archivo{
-background:#eaf1ff;
-padding:12px;
-border-radius:10px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+background:linear-gradient(135deg,#eaf1ff,#dce8ff);
+border:2px dashed #7c9cff;
+
+padding:18px;
+border-radius:12px;
+
 cursor:pointer;
 font-size:14px;
-text-align:center;
+color:#4a67d6;
+
+transition:.3s;
+}
+
+.subir-archivo:hover{
+background:#dce8ff;
+transform:scale(1.02);
 }
 
 .subir-archivo input{
-margin-top:8px;
+display:none;
 }
 
 /* ANIMACIONES MODAL */
