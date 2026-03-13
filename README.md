@@ -1,35 +1,35 @@
-<div align="center">
+<p align="center">
+  <img src="banner_disenoswebc.png" alt="Banner de Diseños Web C con Giratina y Ultra Necrozma" width="100%">
+</p>
 
-# 🌐 Diseños Web C
-### "Innovación y precisión nivel Leyenda para tu negocio"
+# 🌐 Diseños Web C - Portafolio Profesional
 
-<img src="img/banner_disenoswebc.png" width="100%" alt="Banner Legendario Diseños Web C">
-
-<br>
-
-> ### ✨ Forma Origen del Desarrollo Web ✨
-> *Donde la elegancia de Giratina y la luz de Ultra Necrozma se encuentran.*
-
-</div>
-
----
+¡Bienvenido al Mundo Distorsión del desarrollo web! Este es mi portafolio oficial, donde la elegancia y la funcionalidad se encuentran.
 
 ## 🚀 Sobre el Proyecto
-Este sitio es la **Forma Origen** de mi marca personal. Diseñé cada sección para que fuera tan impactante como un **Rayo Umbrío**, utilizando una interfaz limpia y moderna.
+Este sitio es la **Forma Origen** de mi marca personal. He diseñado cada sección para que sea tan impactante como un *Rayo Umbrío*, utilizando una interfaz limpia y moderna.
 
 > "No importa qué tan profundo sea el misterio, siempre hay una solución brillante." — 🌌
 
-### 🛠️ Tecnologías Nivel Maestro
-* **HTML5 / CSS3:** Estructura y diseño con jerarquía visual clara.
-* **JavaScript:** La chispa de energía para la interactividad de los botones.
-* **GitHub Pages:** Despliegue profesional en el Mundo Distorsión.
+### ✨ Características principales:
+* **Diseño Legendario:** Optimizado para cualquier dispositivo (móvil y escritorio).
+* **Interfaz Variaolor:** Estética inspirada en la luz de Ultra Necrozma y las sombras de Giratina.
+* **Estructura Firme:** Secciones para Tiendas, Catálogos y Páginas Informativas.
+
+## 🛠️ Tecnologías Utilizadas
+* **HTML5:** Estructura semántica.
+* **CSS3:** Animaciones fluidas y diseño responsivo.
+* **GitHub Pages:** Despliegue y hosting.
+
+## 📂 Estructura del Proyecto
+* `index.html` - Estructura principal.
+* `style.css` - Estilos y diseño visual.
+* `banner_disenoswebc.png` - Identidad visual.
 
 ---
-
 ## 📩 ¿Listo para evolucionar tu negocio?
 * **WhatsApp:** [Enviar Mensaje Directo](https://wa.me/525630017651)
 * **Correo:** cesarsanchezmoreno599@gmail.com
 
 ---
-
-<p align="right"><i>Desarrollado con precisión legendaria por <b>Cesar Sanchez</b> — 2026</i></p>
+*Desarrollado con precisión legendaria por **Cesar Sanchez** — 2026*
