@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+<h1 class="logo">Marketplace Pro</h1>
+
+<input type="text" id="buscador" placeholder="Buscar productos...">
+
+<div class="carrito-icono" onclick="toggleCarrito()">
+🛒 <span id="contador">0</span>
+</div>
+
+<a class="admin-link" href="admin.html">Admin</a>
+
+</header>
+
+<section class="productos" id="productos"></section>
+
+<aside class="carrito" id="carrito">
+
+<h2>Carrito</h2>
+
+<ul id="listaCarrito"></ul>
+
+<p>Total: $<span id="total">0</span></p>
+
+<button onclick="vaciarCarrito()">Vaciar</button>
+
+</aside>
+
+<script src="script.js"></script>
+
+</body>
+</html>
