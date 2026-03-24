@@ -1,98 +1,117 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Psicólogo | Demo</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicólogo | Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <div class="barra-demo">
-Demo de plantilla | Diseñada por Web C
+    Demo de plantilla | Diseñada por Web C
 </div>
 
 <header class="header">
-<div class="logo">PsicoVida</div>
-
-<nav class="nav">
-<a href="#inicio">Inicio</a>
-<a href="#sobre">Sobre mí</a>
-<a href="#servicios">Servicios</a>
-<a href="#contacto">Contacto</a>
-</nav>
+    <div class="logo">PsicoVida</div>
+    <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 </header>
 
 <section id="inicio" class="hero">
-<div class="hero-contenido">
-<h1>Terapia psicológica profesional</h1>
-<p>Espacio seguro para tu bienestar emocional.</p>
-
-<a class="btn-principal" href="#contacto">Agendar cita</a>
-</div>
+    <div class="hero-contenido">
+        <h1>Terapia psicológica profesional</h1>
+        <p>Espacio seguro para tu bienestar emocional.</p>
+        <a id="abrirSimulador" class="btn-principal" href="javascript:void(0)">Agendar cita</a>
+    </div>
 </section>
 
 <section id="sobre" class="sobre reveal">
-<div class="container">
-
-<img src="img/psicologo.jpg" alt="Psicólogo">
-
-<div>
-<h2>Sobre mí</h2>
-<p>
-Psicólogo especializado en terapia emocional,
-ansiedad y desarrollo personal.
-</p>
-</div>
-
-</div>
+    <div class="container">
+        <img src="img/psicologo.jpg" alt="Psicólogo">
+        <div>
+            <h2>Sobre mí</h2>
+            <p>Psicólogo especializado en terapia emocional, ansiedad y desarrollo personal.</p>
+        </div>
+    </div>
 </section>
 
 <section id="servicios" class="servicios reveal">
-
-<h2>Servicios</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Terapia individual</h3>
-<p>Sesiones personalizadas para trabajar tus emociones.</p>
-</div>
-
-<div class="card">
-<h3>Terapia de pareja</h3>
-<p>Fortalece tu relación con herramientas psicológicas.</p>
-</div>
-
-<div class="card">
-<h3>Terapia online</h3>
-<p>Atención profesional desde cualquier lugar.</p>
-</div>
-
-</div>
-
+    <h2>Servicios</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Terapia individual</h3>
+            <p>Sesiones personalizadas para trabajar tus emociones.</p>
+        </div>
+        <div class="card">
+            <h3>Terapia de pareja</h3>
+            <p>Fortalece tu relación con herramientas psicológicas.</p>
+        </div>
+        <div class="card">
+            <h3>Terapia online</h3>
+            <p>Atención profesional desde cualquier lugar.</p>
+        </div>
+    </div>
 </section>
 
 <section id="contacto" class="contacto reveal">
-
-<section id="contacto" class="contacto">
-
-<h2>Contacto</h2>
-<p>Agenda tu sesión por WhatsApp</p>
-
-<a class="btn-whatsapp" href="#">Enviar mensaje</a>
-
+    <h2>Contacto</h2>
+    <p>Agenda tu sesión por WhatsApp</p>
+    <a class="btn-whatsapp" href="https://wa.me/525630017651">Enviar mensaje</a>
 </section>
 
 <footer>
-<p>© 2026 PsicoVida</p>
+    <p>© 2026 PsicoVida</p>
 </footer>
 
+<div id="modalAgenda" class="modal-demo">
+    <div class="modal-content-demo">
+        <span class="cerrar-modal">&times;</span>
+        <h2>Agendar Cita</h2>
+        <p>Simulación de sistema de citas para <strong>PsicoVida</strong></p>
+        
+        <form id="formSimulacion">
+            <input type="text" placeholder="Tu nombre completo" required>
+            <input type="date" id="fechaCita" required>
+            <select required>
+                <option value="">Selecciona horario</option>
+                <option>10:00 AM</option>
+                <option>12:00 PM</option>
+                <option>04:00 PM</option>
+                <option>06:00 PM</option>
+            </select>
+            <button type="submit" class="btn-enviar-demo">Confirmar Cita</button>
+        </form>
 
+        <div id="mensajeExito" style="display:none; margin-top:20px;">
+            <p style="color: #28a745; font-weight: bold; font-size: 1.1rem;">
+                ✅ ¡Listo! Tu cita ha sido agendada con éxito.
+            </p>
+            <p style="color: #666;">
+                <small>En una web real, el psicólogo recibiría un correo ahora mismo.</small>
+            </p>
+        </div>
+    </div>
+</div>
 
+<div id="modalAgenda" class="modal-demo">
+    <div class="modal-content-demo">
+        <span class="cerrar-modal">&times;</span>
+        <h2>Agendar Cita</h2>
+        <form id="formSimulacion">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="date" id="fechaCita" required>
+            <button type="submit" class="btn-enviar-demo">Confirmar Cita</button>
+        </form>
+        <div id="mensajeExito" style="display:none;">✅ ¡Cita agendada!</div>
+    </div>
+</div>
 <script src="js/script.js"></script>
 
 </body>

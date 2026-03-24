@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Marketplace Pro</title>
+
+<title>Marketplace Demo</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <header class="header">
 
-<h1 class="logo">Marketplace Pro</h1>
+<h1 class="logo">MarketPlace</h1>
 
 <input type="text" id="buscador" placeholder="Buscar productos...">
 
@@ -19,11 +23,21 @@
 🛒 <span id="contador">0</span>
 </div>
 
-<a class="admin-link" href="admin.html">Admin</a>
-
 </header>
 
-<section class="productos" id="productos"></section>
+
+<section class="filtros">
+
+<button onclick="filtrar('todos')">Todos</button>
+<button onclick="filtrar('tecnologia')">Tecnología</button>
+<button onclick="filtrar('hogar')">Hogar</button>
+<button onclick="filtrar('ropa')">Ropa</button>
+
+</section>
+
+
+<main class="productos" id="productos"></main>
+
 
 <aside class="carrito" id="carrito">
 
@@ -31,11 +45,12 @@
 
 <ul id="listaCarrito"></ul>
 
-<p>Total: $<span id="total">0</span></p>
+<p class="total">Total: $<span id="total">0</span></p>
 
-<button onclick="vaciarCarrito()">Vaciar</button>
+<button onclick="vaciarCarrito()">Vaciar carrito</button>
 
 </aside>
+
 
 <script src="script.js"></script>
 

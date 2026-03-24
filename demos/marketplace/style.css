@@ -1,137 +1,202 @@
-body{
-margin:0;
-font-family:Arial;
-background:#f4f6fb;
+/* =========================================
+   ESTILOS MARKETPLACE - WEB C
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* HEADER */
-
-.header{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:15px 30px;
-
-background:white;
-
-box-shadow:0 2px 10px rgba(0,0,0,.1);
+body {
+    background: #f4f7f6;
+    color: #333;
+    padding-top: 80px; /* Espacio para el header fijo */
 }
 
-.logo{
-color:#0077ff;
+/* Header Estilo E-commerce */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #232f3e; /* Azul oscuro elegante */
+    color: white;
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.header input{
-
-width:35%;
-padding:8px;
-
-border-radius:6px;
-border:1px solid #ccc;
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #febd69; /* Naranja Marketplace */
 }
 
-.admin-link{
-text-decoration:none;
-color:#0077ff;
-font-weight:bold;
+#buscador {
+    flex: 1;
+    margin: 0 30px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
 }
 
-/* PRODUCTOS */
-
-.productos{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-gap:20px;
-
-padding:30px;
+.carrito-icono {
+    font-size: 22px;
+    cursor: pointer;
+    position: relative;
 }
 
-.card{
-
-background:white;
-
-border-radius:10px;
-
-padding:15px;
-
-text-align:center;
-
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
-transition:.3s;
+#contador {
+    background: #febd69;
+    color: #232f3e;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px; right: -10px;
 }
 
-.card:hover{
-transform:translateY(-5px);
+/* Filtros */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background: white;
+    margin-bottom: 20px;
 }
 
-.card img{
-
-width:100%;
-height:150px;
-
-object-fit:cover;
+.filtros button {
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.card button{
-
-background:#0077ff;
-
-color:white;
-
-border:none;
-
-padding:8px 12px;
-
-border-radius:6px;
-
-cursor:pointer;
+.filtros button:hover {
+    background: #232f3e;
+    color: white;
 }
 
-/* CARRITO */
-
-.carrito{
-
-position:fixed;
-
-top:0;
-right:-320px;
-
-width:300px;
-height:100%;
-
-background:white;
-
-box-shadow:-5px 0 20px rgba(0,0,0,.2);
-
-padding:20px;
-
-transition:.4s;
+/* Grid de Productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px 5%;
 }
 
-.carrito.activo{
-right:0;
+.card-producto {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
 }
 
-/* ADMIN */
-
-form{
-
-display:flex;
-flex-direction:column;
-
-gap:10px;
-
-width:300px;
-
-margin:30px;
+.card-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-form input{
-padding:8px;
+.card-producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card-producto h3 { font-size: 18px; margin-bottom: 10px; }
+.card-producto .precio { color: #b12704; font-size: 20px; font-weight: bold; }
+
+.btn-agregar {
+    background: #febd69;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Carrito Lateral (Aside) */
+.carrito {
+    position: fixed;
+    right: -400px; /* Escondido por defecto */
+    top: 0;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    z-index: 2000;
+    transition: 0.4s;
+    overflow-y: auto;
+}
+
+.carrito.active { right: 0; }
+
+.carrito h2 { margin-bottom: 20px; border-bottom: 2px solid #f4f4f4; padding-bottom: 10px; }
+
+#listaCarrito li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total { font-size: 22px; font-weight: bold; margin: 20px 0; text-align: right; }
+
+/* Esto es un comentario en español, no afecta el código */
+/* =========================================
+   RETOQUE DE BOTÓN - VERSIÓN TRUPER PRO
+   ========================================= */
+
+.card button {
+    background: #0077ff;
+    color: white;
+    border: none;
+    
+    /* CAMBIO CLAVE: Quitamos width 100% y usamos inline-block o auto */
+    width: auto; 
+    display: inline-block; 
+    padding: 10px 25px; /* Más aire a los lados que arriba/abajo */
+    
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px; /* Un pelín más chico para que se vea fino */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+    /* Centramos el botón si es necesario */
+    margin: 10px auto; 
+}
+
+.card button:hover {
+    background: #005fcc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 119, 255, 0.3);
+}
+/* Efecto al pasar el mouse (Hover) */
+.card button:hover {
+    background: #cc9600; /* Un azul más oscuro al hacer hover */
+    transform: translateY(-2px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 6px 10px rgb(255, 200, 80); /* Sombra más pronunciada */
+}
+
+/* Efecto al hacer clic (Active) */
+.card button:active {
+    transform: translateY(0); /* Vuelve a su lugar */
+    box-shadow: 0 2px 4px rgba(255, 230, 0, 0.2); /* Sombra mínima */
 }

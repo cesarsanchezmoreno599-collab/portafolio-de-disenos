@@ -1,143 +1,80 @@
-let productos = JSON.parse(localStorage.getItem("productos")) || [
-
-{nombre:"Laptop",precio:15000,img:"https://picsum.photos/200?1"},
-{nombre:"Celular",precio:8000,img:"https://picsum.photos/200?2"},
-{nombre:"Audífonos",precio:1200,img:"https://picsum.photos/200?3"}
-
+// Base de datos de productos expandida
+const productos = [
+    { id: 1, nombre: "Laptop Pro 14", precio: 1200, cat: "tecnologia", img: "https://picsum.photos/200/150?random=1" },
+    { id: 2, nombre: "Smartphone S24", precio: 950, cat: "tecnologia", img: "https://picsum.photos/200/150?random=2" },
+    { id: 3, nombre: "Audífonos Noise Cancel", precio: 200, cat: "tecnologia", img: "https://picsum.photos/200/150?random=3" },
+    { id: 4, nombre: "Monitor 4K 27\"", precio: 350, cat: "tecnologia", img: "https://picsum.photos/200/150?random=4" },
+    { id: 5, nombre: "Cafetera Inteligente", precio: 80, cat: "hogar", img: "https://picsum.photos/200/150?random=5" },
+    { id: 6, nombre: "Lámpara de Escritorio", precio: 45, cat: "hogar", img: "https://picsum.photos/200/150?random=6" },
+    { id: 7, nombre: "Set de Sartenes Pro", precio: 110, cat: "hogar", img: "https://picsum.photos/200/150?random=7" },
+    { id: 8, nombre: "Aspiradora Robot", precio: 300, cat: "hogar", img: "https://picsum.photos/200/150?random=8" },
+    { id: 9, nombre: "Chaqueta de Invierno", precio: 120, cat: "ropa", img: "https://picsum.photos/200/150?random=9" },
+    { id: 10, nombre: "Tenis Running", precio: 90, cat: "ropa", img: "https://picsum.photos/200/150?random=10" },
+    { id: 11, nombre: "Gorra Deportiva", precio: 25, cat: "ropa", img: "https://picsum.photos/200/150?random=11" },
+    { id: 12, nombre: "Reloj Elegante", precio: 180, cat: "ropa", img: "https://picsum.photos/200/150?random=12" }
 ];
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+let carrito = [];
 
-const contenedor = document.getElementById("productos");
+// Función para mostrar productos (render)
+function mostrarProductos(lista) {
+    const contenedor = document.getElementById("productos");
+    contenedor.innerHTML = "";
+    
+    lista.forEach(p => {
+        contenedor.innerHTML += `
+            <div class="card">
+                <img src="${p.img}" alt="${p.nombre}">
+                <h3>${p.nombre}</h3>
+                <p class="precio">$${p.precio}</p>
+                <button onclick="agregarAlCarrito(${p.id})">Agregar</button>
+            </div>
+        `;
+    });
+}
 
-if(contenedor){
+// Lógica del buscador
+document.getElementById("buscador").addEventListener("input", (e) => {
+    const termino = e.target.value.toLowerCase();
+    const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(termino));
+    mostrarProductos(filtrados);
+});
 
+// Carrito y Alertas nativas
+function agregarAlCarrito(id) {
+    const p = productos.find(prod => prod.id === id);
+    carrito.push(p);
+    actualizarInterfaz();
+    alert(`🛒 ${p.nombre} se agregó al carrito.`);
+}
+
+function actualizarInterfaz() {
+    const lista = document.getElementById("listaCarrito");
+    const total = document.getElementById("total");
+    const contador = document.getElementById("contador");
+
+    lista.innerHTML = "";
+    let suma = 0;
+
+    carrito.forEach((item, index) => {
+        suma += item.precio;
+        lista.innerHTML += `<li>${item.nombre} - $${item.precio}</li>`;
+    });
+
+    total.innerText = suma;
+    contador.innerText = carrito.length;
+}
+
+function toggleCarrito() {
+    document.getElementById("carrito").classList.toggle("activo");
+}
+
+function vaciarCarrito() {
+    if(confirm("¿Vaciar todo el carrito?")) {
+        carrito = [];
+        actualizarInterfaz();
+    }
+}
+
+// Carga inicial
 mostrarProductos(productos);
-
-}
-
-function mostrarProductos(lista){
-
-contenedor.innerHTML="";
-
-lista.forEach((p,i)=>{
-
-contenedor.innerHTML+=`
-
-<div class="card">
-
-<img src="${p.img}">
-
-<h3>${p.nombre}</h3>
-
-<p>$${p.precio}</p>
-
-<button onclick="agregar(${i})">Agregar</button>
-
-</div>
-
-`;
-
-});
-
-}
-
-function agregar(i){
-
-carrito.push(productos[i]);
-
-localStorage.setItem("carrito",JSON.stringify(carrito));
-
-actualizarCarrito();
-
-}
-
-function actualizarCarrito(){
-
-const lista=document.getElementById("listaCarrito");
-
-const contador=document.getElementById("contador");
-
-const total=document.getElementById("total");
-
-if(!lista)return;
-
-lista.innerHTML="";
-
-let suma=0;
-
-carrito.forEach(p=>{
-
-lista.innerHTML+=`<li>${p.nombre} - $${p.precio}</li>`;
-
-suma+=p.precio;
-
-});
-
-contador.textContent=carrito.length;
-
-total.textContent=suma;
-
-}
-
-function toggleCarrito(){
-
-document.getElementById("carrito").classList.toggle("activo");
-
-}
-
-function vaciarCarrito(){
-
-carrito=[];
-
-localStorage.setItem("carrito",JSON.stringify(carrito));
-
-actualizarCarrito();
-
-}
-
-/* BUSCADOR */
-
-const buscador=document.getElementById("buscador");
-
-if(buscador){
-
-buscador.addEventListener("keyup",e=>{
-
-const texto=e.target.value.toLowerCase();
-
-const filtrados=productos.filter(p=>p.nombre.toLowerCase().includes(texto));
-
-mostrarProductos(filtrados);
-
-});
-
-}
-
-/* ADMIN */
-
-const form=document.getElementById("formProducto");
-
-if(form){
-
-form.addEventListener("submit",e=>{
-
-e.preventDefault();
-
-const nombre=document.getElementById("nombre").value;
-
-const precio=document.getElementById("precio").value;
-
-const img=document.getElementById("imagen").value || "https://picsum.photos/200";
-
-productos.push({nombre,precio,img});
-
-localStorage.setItem("productos",JSON.stringify(productos));
-
-alert("Producto agregado");
-
-form.reset();
-
-});
-
-}
