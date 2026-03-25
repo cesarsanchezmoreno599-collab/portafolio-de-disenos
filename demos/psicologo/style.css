@@ -13,11 +13,12 @@ html, body {
     background: #f5f7fb;
     color: #333;
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 /* Espacio para que el contenido no quede debajo del header fijo */
 body {
-    padding-top: 65px; 
+    padding-top: 60px; 
 }
 
 /* =========================================
@@ -32,6 +33,9 @@ body {
     padding: 10px;
     font-size: 14px;
     font-weight: 300;
+    position: relative;
+    z-index: 1001;
+    width: 100%;
 }
 
 /* Header de navegación */
@@ -41,12 +45,13 @@ body {
     align-items: center;
     padding: 15px 50px;
     background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px); /* Efecto cristal */
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .logo {
@@ -99,6 +104,47 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.9;
+}
+
+/* SECCIÓN DE STATS (NUEVO) */
+.stats {
+    background: white;
+    padding: 80px 20px;
+}
+
+.container-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+
+.stat-item i {
+    font-size: 45px;
+    color: #6a9fb5;
+    margin-bottom: 15px;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: #4a6fa5;
+}
+
+.stat-item p {
+    color: #777;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Contenedores generales */
@@ -154,6 +200,13 @@ section {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.card i {
+    font-size: 40px;
+    color: #6a9fb5;
+    margin-bottom: 20px;
+    display: block;
+}
+
 .card h3 {
     margin-bottom: 15px;
     color: #4a6fa5;
@@ -170,50 +223,6 @@ section {
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.contacto {
-    background: white;
-    text-align: center; /* Centra textos */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el botón y elementos flex */
-    justify-content: center;
-}
-
-.contacto h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.contacto p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 25px;
-}
-/* Estilo del Botón de WhatsApp */
-.btn-whatsapp {
-    background: #25d366;
-    color: white;
-    padding: 15px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-}
-
-.btn-whatsapp:hover {
-    background: #1eb954;
-    transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
 /* =========================================
    5. BOTONES Y ACCIONES
    ========================================= */
@@ -239,14 +248,27 @@ footer {
     transform: scale(1.05);
 }
 
+.btn-whatsapp {
+    background: #25d366;
+    color: white;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: #02ff5f;
-    color: rgb(255, 255, 255);
-    width: 65px;
-    height: 65px;
+    background: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -260,18 +282,19 @@ footer {
 .whatsapp-float:hover { transform: rotate(15deg) scale(1.1); }
 
 /* =========================================
-   6. MODAL SYSTEM (CORREGIDO PC/CEL)
+   6. MODAL SYSTEM
    ========================================= */
 .modal-demo {
     display: none; 
     position: fixed;
-    z-index: 2000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.75);
-    align-items: center; 
+    z-index: 99999 !important; /* Forzamos que esté al frente de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px);
 }
 
 .modal-content-demo {
@@ -300,8 +323,6 @@ footer {
     transition: 0.3s;
 }
 
-.cerrar-modal:hover { color: #333; }
-
 #formSimulacion input, #formSimulacion select {
     width: 100%;
     padding: 14px;
@@ -323,26 +344,27 @@ footer {
    7. RESPONSIVE (MÓVIL)
    ========================================= */
 @media (max-width: 768px) {
-    body { padding-top: 120px; }
+    body { padding-top: 105px; }
 
     .header {
         flex-direction: column;
-        padding: 15px;
+        padding: 20px;
+        gap: 10px;
     }
 
     .nav {
-        margin-top: 15px;
+        margin-top: 8px;
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
     .nav a {
-        margin: 0 10px;
+        margin: 0 8px;
         font-size: 13px;
     }
 
-    .hero h1 { font-size: 34px; }
+    .hero h1 { font-size: 32px; }
 
     .container {
         flex-direction: column;
@@ -352,31 +374,141 @@ footer {
     .container img {
         width: 250px;
         height: 250px;
-        object-fit: cover;
         border-radius: 50% !important;
     }
 
-    .grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;
-        max-width: 350px;
-    }
-
-    .btn-principal, .btn-whatsapp {
-        width: 100%;
-        max-width: 300px;
+    .stat-item {
+        min-width: 100%;
     }
 }
 
-/* Footer simple */
+/* =========================================
+   8. ANIMACIONES REVEAL
+   ========================================= */
+.reveal {
+    opacity: 1 !important; /* Forzamos visibilidad */
+    transform: none !important; 
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 footer {
     background: #1a1a1a;
     color: #777;
     text-align: center;
-    padding: 30px;
+    padding: 40px;
     font-size: 14px;
+}
+
+/* =========================================
+   FIX: CENTRADO DE CONTACTO
+   ========================================= */
+.contacto {
+    background: white;
+    text-align: center; /* Centra el texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el botón horizontalmente */
+    justify-content: center;
+    padding: 100px 20px;
+    width: 100%;
+}
+
+.contacto h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contacto p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste del botón para que no se vea gigante en PC */
+.contacto .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: auto; /* Para que no ocupe todo el ancho si no es necesario */
+    min-width: 250px;
+    justify-content: center;
+}
+/* =========================================
+   9. AJUSTES ESPECÍFICOS DE SECCIÓN SOBRE MÍ
+   ========================================= */
+
+/* Forzamos que en PC la foto y el texto estén alineados */
+.sobre .container {
+    display: flex;
+    flex-direction: row; /* Horizontal */
+    align-items: center;
+    justify-content: center;
+    gap: 60px; /* Espacio entre foto y texto */
+    text-align: left; /* El texto alineado a la izquierda se ve más pro */
+}
+
+/* Controlamos el tamaño de la imagen */
+.sobre img {
+    flex-shrink: 0; /* Que la foto no se haga chiquita si hay mucho texto */
+    width: 350px;
+    height: 400px;
+    object-fit: cover; /* Recorta la imagen para que siempre sea cuadrada/perfecta */
+    border-radius: 25px;
+    filter: none; /* Quitamos el gris para que luzca el color original */
+}
+
+/* Ajustamos el bloque de texto */
+.sobre div {
+    flex: 1; /* Que el texto ocupe el resto del espacio */
+}
+
+.sobre h2 {
+    font-size: 32px;
+    color: #4a6fa5;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Una rayita coqueta debajo del título */
+.sobre h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #6a9fb5;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.sobre p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Responsive: En celulares se vuelve a poner uno arriba del otro */
+@media (max-width: 900px) {
+    .sobre .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .sobre h2::after {
+        margin: 10px auto; /* Centra la rayita en móvil */
+    }
+
+    .sobre img {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 30px;
+    }
 }

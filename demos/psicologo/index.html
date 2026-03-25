@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psicólogo | Demo</title>
+    <title>PsicoVida | Terapia Profesional</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -28,51 +30,76 @@
     <div class="hero-contenido">
         <h1>Terapia psicológica profesional</h1>
         <p>Espacio seguro para tu bienestar emocional.</p>
-        <a id="abrirSimulador" class="btn-principal" href="javascript:void(0)">Agendar cita</a>
+        <a id="abrirSimulador" class="btn-principal" href="javascript:void(0)" onclick="document.getElementById('modalAgenda').style.display='flex'">Agendar cita</a>
+    </div>
+</section>
+
+<section class="stats reveal">
+    <div class="container-stats">
+        <div class="stat-item">
+            <i class="fas fa-user-check"></i>
+            <span>+500</span>
+            <p>Pacientes felices</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-graduation-cap"></i>
+            <span>10+</span>
+            <p>Años de experiencia</p>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-award"></i>
+            <span>Certificado</span>
+            <p>Por la AMPS</p>
+        </div>
     </div>
 </section>
 
 <section id="sobre" class="sobre reveal">
     <div class="container">
-        <img src="img/psicologo.jpg" alt="Psicólogo">
+        <img src="/img/psicologo.png" alt="Psicólogo">
         <div>
             <h2>Sobre mí</h2>
-            <p>Psicólogo especializado en terapia emocional, ansiedad y desarrollo personal.</p>
+            <p>Psicólogo especializado en terapia emocional, manejo de ansiedad y procesos de desarrollo personal con enfoque humanista.</p>
         </div>
     </div>
 </section>
 
 <section id="servicios" class="servicios reveal">
-    <h2>Servicios</h2>
+    <h2>Nuestros Servicios</h2>
     <div class="grid">
         <div class="card">
+            <i class="fas fa-user"></i>
             <h3>Terapia individual</h3>
-            <p>Sesiones personalizadas para trabajar tus emociones.</p>
+            <p>Sesiones personalizadas para trabajar tus emociones en un entorno privado.</p>
         </div>
         <div class="card">
+            <i class="fas fa-users"></i>
             <h3>Terapia de pareja</h3>
-            <p>Fortalece tu relación con herramientas psicológicas.</p>
+            <p>Fortalece tu relación y mejora la comunicación con herramientas prácticas.</p>
         </div>
         <div class="card">
+            <i class="fas fa-laptop-medical"></i>
             <h3>Terapia online</h3>
-            <p>Atención profesional desde cualquier lugar.</p>
+            <p>Atención profesional y flexible desde la comodidad de tu hogar.</p>
         </div>
     </div>
 </section>
 
 <section id="contacto" class="contacto reveal">
-    <h2>Contacto</h2>
-    <p>Agenda tu sesión por WhatsApp</p>
-    <a class="btn-whatsapp" href="https://wa.me/525630017651">Enviar mensaje</a>
+    <h2>Contacto Directo</h2>
+    <p>¿Tienes dudas? Agenda tu sesión rápidamente por WhatsApp.</p>
+    <a class="btn-whatsapp" href="https://wa.me/525630017651?text=Hola%20PsicoVida,%20me%20gustaría%20agendar%20una%20sesión%20de%20terapia.">
+        <i class="fab fa-whatsapp"></i> Enviar mensaje
+    </a>
 </section>
 
 <footer>
-    <p>© 2026 PsicoVida</p>
+    <p>© 2026 PsicoVida | Diseños y Desarrollo Web C</p>
 </footer>
 
 <div id="modalAgenda" class="modal-demo">
     <div class="modal-content-demo">
-        <span class="cerrar-modal">&times;</span>
+        <span class="cerrar-modal" onclick="document.getElementById('modalAgenda').style.display='none'">&times;</span>
         <h2>Agendar Cita</h2>
         <p>Simulación de sistema de citas para <strong>PsicoVida</strong></p>
         
@@ -89,30 +116,16 @@
             <button type="submit" class="btn-enviar-demo">Confirmar Cita</button>
         </form>
 
-        <div id="mensajeExito" style="display:none; margin-top:20px;">
+       <div id="mensajeExito" style="display:none; margin-top:20px;">
             <p style="color: #28a745; font-weight: bold; font-size: 1.1rem;">
                 ✅ ¡Listo! Tu cita ha sido agendada con éxito.
             </p>
             <p style="color: #666;">
-                <small>En una web real, el psicólogo recibiría un correo ahora mismo.</small>
+                <small>En una web real, el profesional recibiría una notificación ahora mismo.</small>
             </p>
         </div>
     </div>
 </div>
-
-<div id="modalAgenda" class="modal-demo">
-    <div class="modal-content-demo">
-        <span class="cerrar-modal">&times;</span>
-        <h2>Agendar Cita</h2>
-        <form id="formSimulacion">
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="date" id="fechaCita" required>
-            <button type="submit" class="btn-enviar-demo">Confirmar Cita</button>
-        </form>
-        <div id="mensajeExito" style="display:none;">✅ ¡Cita agendada!</div>
-    </div>
-</div>
-<script src="js/script.js"></script>
 
 </body>
 </html>
